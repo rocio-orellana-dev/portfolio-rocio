@@ -1,0 +1,237 @@
+Actúa como arquitecto senior Full-Stack + UX/UI. Construye un portfolio personal COMPLETO y FUNCIONAL para:
+
+Nombre: Rocío Belén Orellana Díaz
+Email: rocio.orellana.ing@gmail.com
+Objetivo: Portfolio profesional para práctica profesional y oportunidades junior como Full Stack, con foco en UX, sistemas y detalle. Debe verse premium, sobrio, confiable, sin clichés y sin parecer template o IA.
+
+REQUISITOS OBLIGATORIOS
+1) Tech stack:
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- i18n con next-intl
+- Dark mode opcional con next-themes (toggle light/dark), y modo oscuro con estética “azul noche” premium.
+- Case studies en MDX (contenido largo) + datos de proyectos en un archivo TS (para cards y filtros).
+- Deploy listo para Vercel.
+
+2) Bilingüe (ES/EN) con detección automática del idioma del navegador:
+- La ruta raíz “/” debe redirigir automáticamente a “/es” o “/en” según Accept-Language.
+- Estructura de URLs: /[locale]/...
+- Debe existir un toggle de idioma en texto “ES / EN” (NO banderas), que mantenga la misma ruta cambiando solo el locale.
+
+3) Diseño y marca (UI/UX):
+- Estilo: “Profesional con calidez + Tech moderno” con sensación principal “confiable y dedicada”.
+- Paleta light:
+  - bg: #FAFAF9
+  - text: #1F2937
+  - primary teal: #0F766E
+  - accent amber (uso mínimo): #F59E0B
+  - border: #E5E7EB
+- Paleta dark (azul noche):
+  - bg: #0B1220
+  - card: #0F1A2E
+  - text: #E5E7EB
+  - muted: #94A3B8
+  - primary teal: #2DD4BF
+  - accent amber: #FBBF24
+  - border: #1F2A44
+- Tipografías:
+  - Inter para UI/texto
+  - Sora para títulos (headings)
+- Diseño premium: limpio, jerarquía clara, mucho espacio en blanco, sin emojis/íconos decorativos en los highlights.
+
+ARQUITECTURA DE PÁGINAS
+Crear estas rutas (bilingüe):
+- /[locale] (Home)
+- /[locale]/projects (lista)
+- /[locale]/projects/[slug] (case study MDX)
+- /[locale]/about
+- /[locale]/embroidery-lab
+- /[locale]/notes (puede quedar placeholder inicial)
+- /[locale]/resume (por ahora placeholder con botón “Download PDF”)
+- /[locale]/contact (info y CTA)
+
+COMPONENTES OBLIGATORIOS
+1) Navbar sticky:
+- Izquierda: “Rocío Belén Orellana Díaz”
+- Centro (desktop): Projects, About, Embroidery Lab, Notes, Resume, Contact
+- Derecha: toggle idioma texto (ES/EN) + toggle tema (light/dark)
+- En mobile: menú hamburguesa y los toggles siempre accesibles.
+
+2) Home:
+Secciones en este orden:
+- Hero premium con 2 CTA
+- “Qué hago” (3 cards)
+- “Proyectos destacados” (3 cards)
+- “Cómo trabajo” (4 pasos)
+- “Skills con criterio” (Core / Comfortable / Exploring)
+- “Contacto CTA” final
+
+Hero (texto exacto):
+ES:
+- availability: “Disponible para práctica profesional y oportunidades junior”
+- title: “Full Stack Developer enfocada en UX, sistemas y detalle”
+- subtitle: “Diseño y desarrollo soluciones web completas — desde la interfaz hasta la base de datos — combinando lógica, diseño y una ejecución cuidadosa para crear productos funcionales, claros y mantenibles.”
+- growth: “En aprendizaje continuo: ciberseguridad, soporte TI, redes e infraestructura.”
+- CTA1: “Ver proyectos” -> /[locale]/projects
+- CTA2: “Descargar CV” -> /[locale]/resume
+
+EN:
+- availability: “Open to internships and junior opportunities”
+- title: “Full Stack Developer focused on UX, systems, and detail”
+- subtitle: “I design and build complete web solutions — from UI to database — combining logic, design, and careful execution to create functional, clear, and maintainable products.”
+- growth: “Continuously learning: cybersecurity, IT support, networking, and infrastructure.”
+- CTA1: “View projects”
+- CTA2: “Download resume”
+
+3) Projects page:
+- Lista de proyectos con cards y badges.
+- Link a cada case study: /[locale]/projects/[slug]
+
+4) Case Study layout (MDX):
+- Layout premium legible (prose), con header:
+  - Back link “Volver a proyectos / Back to projects”
+  - Title
+  - Role
+  - Stack badges
+  - Bloque de 3 cards tipográficas: PROBLEMA / SOLUCIÓN / RESULTADO
+  - Dentro de RESULTADO debe incluir opcionalmente “MÉTRICAS / METRICS” con una lista (1–3 bullets).
+- Sin emojis ni íconos decorativos en esas cards.
+- Soportar <ImageGrid> dentro del MDX, que muestre un grid en desktop y 1 columna en mobile.
+
+5) ImageGrid component:
+- En desktop: 2 columnas (md:grid-cols-2)
+- En mobile: 1 columna
+- Cada imagen en card con borde y caption
+
+DATA + CONTENT (OBLIGATORIO)
+1) Crear src/data/projects.ts con 4 proyectos (3 featured):
+- Featured order:
+  1) Sistema de Gestión de Reportes y Convivencia Escolar (Flagship)
+     slug es: sistema-reportes-escolares
+     slug en: school-reporting-system
+     tags: React, TypeScript, Tailwind, REST APIs, MySQL
+     summary es: “Plataforma multirol con derivaciones, seguimiento y cierre de casos, con dashboards por rol.”
+     summary en: “Multi-role platform with routing, case tracking and closure, with role-based dashboards.”
+  2) Tienda Digital de Matrices de Bordado (E-commerce)
+     slug es: tienda-matrices
+     slug en: embroidery-matrix-store
+     tags: React, Tailwind, Payments, Security, Digital goods
+     summary es: “E-commerce de productos digitales con pago y descarga inmediata post-compra.”
+     summary en: “Digital products e-commerce with payments and instant post-purchase downloads.”
+  3) Landing Institucional — Jardín Infantil (UX)
+     slug es: landing-jardin
+     slug en: early-childhood-center-landing
+     tags: HTML, CSS, JavaScript, Responsive, Tailwind
+     summary es: “Landing orientada a confianza y contacto para consultas de matrícula.”
+     summary en: “Trust- and contact-focused landing page for enrollment inquiries.”
+- No featured:
+  4) Sistema de Gestión Escolar (Base) — CRUD de Alumnos y Notas (Base)
+     slug es: sistema-crud-colegio
+     slug en: school-crud-system
+     tags: CRUD, MySQL, REST APIs, Forms
+     summary es: “Proyecto base para consolidar CRUD, formularios y persistencia.”
+     summary en: “Foundation project to consolidate CRUD, forms, and persistence.”
+
+2) Crear MDX en:
+- src/content/projects/es/
+  - sistema-reportes-escolares.mdx
+  - tienda-matrices.mdx
+  - landing-jardin.mdx
+  - sistema-crud-colegio.mdx
+- src/content/projects/en/
+  - school-reporting-system.mdx
+  - embroidery-matrix-store.mdx
+  - early-childhood-center-landing.mdx
+  - (opcional) school-crud-system.mdx (si no hay, al menos los 3 featured en EN)
+Cada MDX debe incluir frontmatter con:
+- title
+- role
+- stack (array)
+- highlights:
+  - problem
+  - solution
+  - outcome
+  - metrics (array opcional)
+
+Usa estos highlights (copiar tal cual):
+
+ES sistema-reportes-escolares:
+problem: “Reportes escolares sin trazabilidad ni seguimiento consistente entre roles.”
+solution: “Flujo multirol con revisión, derivación, seguimiento y cierre, con dashboards por rol.”
+outcome: “Proceso centralizado y estados visibles para coordinar acciones y dar seguimiento ordenado.”
+metrics:
+- “Flujo completo: reporte → revisión → derivación → seguimiento → cierre”
+- “Dashboards diferenciados por rol (apoderado/docente/dirección)”
+- “Historial de seguimiento para trazabilidad”
+
+EN school-reporting-system:
+problem: “School reports handled informally, leading to poor traceability and inconsistent follow-up.”
+solution: “A multi-role workflow (review, routing, tracking, closure) with role-based dashboards.”
+outcome: “Centralized process with clear case status visibility and structured follow-up.”
+metrics:
+- “End-to-end flow: create → review → route → follow up → close”
+- “Role-based dashboards (parents/teachers/admin)”
+- “Follow-up history for traceability”
+
+ES tienda-matrices:
+problem: “Venta de productos digitales con formatos incompatibles y necesidad de automatizar pago y entrega.”
+solution: “E-commerce con selección de formato (JEF/PES/DST), pago online y validación para descarga segura.”
+outcome: “Compra simple y entrega inmediata post-pago, alineada a reglas reales del rubro.”
+metrics:
+- “Selección obligatoria de formato antes de comprar”
+- “Descarga inmediata post-pago”
+- “Precio definido por cantidad de puntadas (stitch count)”
+
+EN embroidery-matrix-store:
+problem: “Digital product sales with incompatible formats and the need to automate payment and delivery.”
+solution: “E-commerce flow with format selection (JEF/PES/DST), online payment, and secure download validation.”
+outcome: “Fast checkout and instant post-payment delivery aligned with real industry rules.”
+metrics:
+- “Mandatory format selection before checkout”
+- “Instant download after payment”
+- “Pricing based on stitch count”
+
+ES landing-jardin:
+problem/solution/outcome coherentes con confianza + contacto para matrícula (no genérico).
+EN early-childhood-center-landing:
+idem en inglés.
+
+En el MDX del sistema escolar incluir sección “Capturas” con <ImageGrid> usando rutas ejemplo:
+- /images/projects/school-reporting/reports-dashboard.png
+- /images/projects/school-reporting/case-detail.png
+- /images/projects/school-reporting/create-report.png
+- /images/projects/school-reporting/routing-followup.png
+
+3) Implementar ImageGrid y permitir su uso desde MDX.
+
+I18N
+- Crear src/i18n/messages/es.json y en.json con los textos mínimos para:
+  - nav labels
+  - hero labels
+  - projects featured section
+  - case (back/role)
+  - caseHighlights (problem/solution/outcome/metrics)
+  - projectsPage (title/subtitle/viewCase)
+  - about page textos
+- Implementar middleware de redirección por idioma del navegador.
+
+ABOUT PAGE CONTENT (usar exacto)
+ES:
+p1: “Soy desarrolladora Full Stack con especial interés en frontend y experiencia construyendo sistemas web completos, desde la interfaz hasta la lógica y la base de datos. Me gusta trabajar con estructura, cuidar los detalles y diseñar soluciones que realmente se puedan usar y mantener en el tiempo.”
+p2: “Me importa tanto que un sistema funcione bien como que sea claro para quien lo usa. Por eso pongo especial atención en la experiencia de usuario, la organización del código y la lógica detrás de cada decisión. Prefiero soluciones simples y bien pensadas antes que complejidad innecesaria.”
+p3: “He desarrollado sistemas de gestión escolar con flujos completos de seguimiento, plataformas multirol, landing pages institucionales y una tienda digital de productos especializados con pagos y descargas automáticas. En cada proyecto busco entender el contexto real antes de implementar la solución.”
+p4: “Además del desarrollo web, trabajo en la creación de matrices de bordado digital. Esta experiencia me ha enseñado a combinar tecnología, diseño y trabajo artesanal digital, reforzando mi atención al detalle, la paciencia y el respeto por los procesos bien hechos.”
+p5: “Actualmente me encuentro en búsqueda de práctica profesional y oportunidades junior, con el objetivo de seguir aprendiendo y crecer en áreas como ciberseguridad, soporte TI, redes e infraestructura.”
+
+EN:
+equivalentes profesionales naturales.
+
+NAVBAR: usar texto ES/EN, no banderas.
+Tema: dark azul noche, light cálido.
+No uses librerías UI pesadas. Mantenerlo simple, rápido, production-ready.
+
+ENTREGABLE
+- Proyecto listo para ejecutar: npm install && npm run dev
+- Sin errores de build
+- Con estructura de carpetas ordenada
+- Con todo el contenido mínimo integrado (Home, About, Projects, Case studies con highlights + metrics, i18n, theme
