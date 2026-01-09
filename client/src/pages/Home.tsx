@@ -13,41 +13,77 @@ export default function Home() {
   // Static content based on locale
   const content = {
     es: {
-      status: "🟢 Disponible para nuevos proyectos",
-      heroTitle: "Full Stack Developer enfocada en UX & Diseño",
-      heroSubtitle: "Diseño y desarrollo soluciones web que combinan funcionalidad robusta con estética refinada.",
-      ctaProject: "Ver Proyectos",
+      availability: "Disponible para práctica profesional y oportunidades junior",
+      heroTitle: "Full Stack Developer enfocada en UX, sistemas y detalle",
+      heroSubtitle: "Diseño y desarrollo soluciones web completas — desde la interfaz hasta la base de datos — combinando lógica, diseño y una ejecución cuidadosa para crear productos funcionales, claros y mantenibles.",
+      growth: "En aprendizaje continuo: ciberseguridad, soporte TI, redes e infraestructura.",
+      ctaProject: "Ver proyectos",
       ctaResume: "Descargar CV",
-      whatIDo: "Lo que hago",
+      quickFacts: {
+        role: "Full Stack",
+        focus: "UX & Systems",
+        status: "Open to internship/junior"
+      },
+      whatIDo: "Qué hago",
       services: [
-        { title: "Desarrollo Frontend", desc: "Interfaces reactivas y performantes con React, TypeScript y Tailwind.", icon: <Code className="w-6 h-6 text-primary"/> },
-        { title: "Diseño UI/UX", desc: "Sistemas de diseño coherentes y experiencias de usuario intuitivas.", icon: <Palette className="w-6 h-6 text-accent"/> },
-        { title: "Soluciones Full Stack", desc: "Arquitecturas escalables de extremo a extremo.", icon: <Layout className="w-6 h-6 text-indigo-500"/> }
+        { title: "Desarrollo Frontend", desc: "React/TS/Tailwind, accesibilidad, performance.", icon: <Code className="w-5 h-5 text-primary"/> },
+        { title: "Sistemas Backend", desc: "APIs REST + DB.", icon: <Layout className="w-5 h-5 text-primary"/> },
+        { title: "Soluciones Full Stack", desc: "End-to-end.", icon: <Palette className="w-5 h-5 text-primary"/> }
       ],
-      featured: "Proyectos Destacados",
-      skills: "Stack Tecnológico",
-      skillsCore: "Core",
-      contactTitle: "¿Tienes una idea en mente?",
-      contactDesc: "Estoy siempre abierta a discutir nuevos proyectos, ideas creativas o oportunidades de ser parte de tus visiones.",
+      howIWork: {
+        title: "Cómo trabajo",
+        steps: [
+          { title: "Descubrir", desc: "Entender el problema." },
+          { title: "Diseñar", desc: "Planificar la solución." },
+          { title: "Construir", desc: "Desarrollo ágil." },
+          { title: "Desplegar", desc: "Puesta en producción." }
+        ]
+      },
+      skills: {
+        title: "Skills con criterio",
+        core: "Core",
+        comfortable: "Comfortable",
+        exploring: "Exploring",
+        exploringList: ["Cybersecurity", "IT Support", "Networking", "Infrastructure"]
+      },
+      featured: "Proyectos destacados",
       contactCta: "Hablemos"
     },
     en: {
-      status: "🟢 Available for new projects",
-      heroTitle: "Full Stack Developer focused on UX & Design",
-      heroSubtitle: "I design and build web solutions that combine robust functionality with refined aesthetics.",
-      ctaProject: "View Projects",
-      ctaResume: "Download Resume",
+      availability: "Open to internships and junior opportunities",
+      heroTitle: "Full Stack Developer focused on UX, systems, and detail",
+      heroSubtitle: "I design and build complete web solutions — from UI to database — combining logic, design, and careful execution to create functional, clear, and maintainable products.",
+      growth: "Continuously learning: cybersecurity, IT support, networking, and infrastructure.",
+      ctaProject: "View projects",
+      ctaResume: "Download resume",
+      quickFacts: {
+        role: "Full Stack",
+        focus: "UX & Systems",
+        status: "Open to internship/junior"
+      },
       whatIDo: "What I Do",
       services: [
-        { title: "Frontend Development", desc: "Reactive and performant interfaces with React, TypeScript and Tailwind.", icon: <Code className="w-6 h-6 text-primary"/> },
-        { title: "UI/UX Design", desc: "Coherent design systems and intuitive user experiences.", icon: <Palette className="w-6 h-6 text-accent"/> },
-        { title: "Full Stack Solutions", desc: "Scalable end-to-end architectures.", icon: <Layout className="w-6 h-6 text-indigo-500"/> }
+        { title: "Frontend Development", desc: "React/TS/Tailwind, accessibility, performance.", icon: <Code className="w-5 h-5 text-primary"/> },
+        { title: "Backend Systems", desc: "REST APIs + DB.", icon: <Layout className="w-5 h-5 text-primary"/> },
+        { title: "Full Stack Solutions", desc: "End-to-end.", icon: <Palette className="w-5 h-5 text-primary"/> }
       ],
+      howIWork: {
+        title: "How I Work",
+        steps: [
+          { title: "Discover", desc: "Understand the problem." },
+          { title: "Design", desc: "Plan the solution." },
+          { title: "Build", desc: "Agile development." },
+          { title: "Deploy", desc: "Go to production." }
+        ]
+      },
+      skills: {
+        title: "Skills with criteria",
+        core: "Core",
+        comfortable: "Comfortable",
+        exploring: "Exploring",
+        exploringList: ["Cybersecurity", "IT Support", "Networking", "Infrastructure"]
+      },
       featured: "Featured Projects",
-      skills: "Tech Stack",
-      skillsCore: "Core",
-      contactTitle: "Have an idea in mind?",
-      contactDesc: "I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
       contactCta: "Let's Talk"
     }
   };
@@ -58,64 +94,108 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden">
-        {/* Background blobs */}
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl -z-10" />
+      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden stitch-grid text-foreground/5 dark:text-foreground/2">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10 text-foreground">
+          <div className="text-left">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-primary text-sm font-semibold mb-4 uppercase tracking-wider"
+            >
+              {t.availability}
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-[1.1]"
+            >
+              {t.heroTitle.split("Full Stack").map((part, i) => (
+                i === 1 ? <span key={i} className="text-gradient">Full Stack</span> : part
+              ))}
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-muted-foreground mb-4 max-w-xl leading-relaxed"
+            >
+              {t.heroSubtitle}
+            </motion.p>
 
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/20"
-          >
-            {t.status}
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 tracking-tight text-foreground"
-          >
-            {t.heroTitle.split("Full Stack").map((part, i) => (
-              i === 1 ? <span key={i} className="text-gradient">Full Stack</span> : part
-            ))}
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
-          >
-            {t.heroSubtitle}
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link href={`/${locale}/projects`}>
-              <Button size="lg" className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30">
-                {t.ctaProject} <ArrowRight className="ml-2 h-4 w-4" />
+            <motion.p
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.3 }}
+               className="text-sm italic text-muted-foreground mb-10"
+            >
+              {t.growth}
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link href={`/${locale}/projects`}>
+                <Button size="lg" className="rounded-md px-8 h-12 text-base">
+                  {t.ctaProject}
+                </Button>
+              </Link>
+              <Button variant="outline" size="lg" className="rounded-md px-8 h-12 text-base">
+                {t.ctaResume}
               </Button>
-            </Link>
-            <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base border-border bg-background hover:bg-secondary/50">
-              {t.ctaResume} <FileDown className="ml-2 h-4 w-4" />
-            </Button>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="hidden md:block"
+          >
+            <div className="bg-card border border-border p-8 rounded-2xl shadow-sm relative overflow-hidden">
+               <div className="aspect-square bg-muted rounded-xl mb-6 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                  <img src="/images/profile.jpg" alt="Rocío" className="w-full h-full object-cover" />
+               </div>
+               <div className="space-y-4">
+                  <h3 className="font-heading font-bold text-xl uppercase tracking-widest text-primary/80">Quick facts</h3>
+                  <div className="grid grid-cols-1 gap-2 text-sm text-muted-foreground">
+                    <div className="flex justify-between border-b border-border/50 pb-2">
+                       <span>Role</span>
+                       <span className="font-bold text-foreground">{t.quickFacts.role}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-border/50 pb-2">
+                       <span>Focus</span>
+                       <span className="font-bold text-foreground">{t.quickFacts.focus}</span>
+                    </div>
+                    <div className="flex justify-between">
+                       <span>Status</span>
+                       <span className="font-bold text-foreground text-xs">{t.quickFacts.status}</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-4">
+                    {["React", "TypeScript", "Node", "MySQL"].map(tag => (
+                      <span key={tag} className="px-2 py-1 bg-muted rounded text-[10px] font-bold uppercase tracking-tighter">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+               </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-muted/30 border-y border-border/50">
+      <section className="py-24 bg-card/50 border-y border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-heading font-bold">{t.whatIDo}</h2>
-            <div className="w-16 h-1 bg-accent mx-auto mt-4 rounded-full" />
+          <div className="mb-16">
+            <h2 className="text-3xl font-heading font-bold uppercase tracking-widest text-primary/40">{t.whatIDo}</h2>
+            <div className="w-12 h-1 bg-primary mt-4" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -124,15 +204,14 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all"
+                className="group bg-card p-10 rounded-xl border border-border/50 hover:border-primary/30 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center mb-6 shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center mb-8 group-hover:bg-primary/5 transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
+                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -140,19 +219,19 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24">
+      <section className="py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 className="text-3xl font-heading font-bold mb-2">{t.featured}</h2>
-              <div className="w-16 h-1 bg-primary rounded-full" />
+              <h2 className="text-3xl font-heading font-bold uppercase tracking-widest text-primary/40">{t.featured}</h2>
+              <div className="w-12 h-1 bg-primary mt-4" />
             </div>
-            <Link href={`/${locale}/projects`} className="hidden md:flex items-center text-primary font-medium hover:underline">
-              {locale === "es" ? "Ver todos" : "View all"} <ArrowRight className="ml-1 h-4 w-4" />
+            <Link href={`/${locale}/projects`} className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors">
+              {locale === "es" ? "Todos los proyectos" : "All projects"}
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {featuredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
@@ -163,49 +242,66 @@ export default function Home() {
                 locale={locale}
               />
             ))}
-            
-            {/* Fallback if no projects yet */}
-            {(!featuredProjects || featuredProjects.length === 0) && (
-              <div className="col-span-3 text-center py-12 text-muted-foreground border border-dashed border-border rounded-xl">
-                 {locale === "es" ? "Cargando proyectos..." : "Loading projects..."}
-              </div>
-            )}
-          </div>
-          
-          <div className="mt-8 text-center md:hidden">
-            <Link href={`/${locale}/projects`} className="inline-flex items-center text-primary font-medium hover:underline">
-              {locale === "es" ? "Ver todos los proyectos" : "View all projects"} <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Skills Marquee (Simplified as grid) */}
-      <section className="py-20 border-t border-border/50 bg-background">
+      {/* How I Work */}
+      <section className="py-24 bg-muted/20 border-y border-border/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-heading font-bold text-center mb-12">{t.skills}</h2>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Logos would be images, using text for now */}
-            {["React", "TypeScript", "Node.js", "Tailwind CSS", "PostgreSQL", "Next.js", "Figma", "Git"].map(tech => (
-               <span key={tech} className="text-xl font-bold text-muted-foreground px-4 py-2 border border-border rounded-lg bg-muted/20">
-                 {tech}
-               </span>
-            ))}
-          </div>
+           <div className="mb-16">
+              <h2 className="text-3xl font-heading font-bold uppercase tracking-widest text-primary/40">{t.howIWork.title}</h2>
+              <div className="w-12 h-1 bg-primary mt-4" />
+           </div>
+           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {t.howIWork.steps.map((step, idx) => (
+                <div key={idx} className="relative">
+                   <span className="text-6xl font-heading font-bold text-primary/5 absolute -top-8 left-0">{idx + 1}</span>
+                   <h3 className="text-lg font-bold mb-2 relative z-10">{step.title}</h3>
+                   <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+           </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">{t.contactTitle}</h2>
-          <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-            {t.contactDesc}
-          </p>
+      {/* Skills Grid */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="mb-16">
+              <h2 className="text-3xl font-heading font-bold uppercase tracking-widest text-primary/40">{t.skills.title}</h2>
+              <div className="w-12 h-1 bg-primary mt-4" />
+           </div>
+           <div className="grid md:grid-cols-3 gap-16">
+              <div>
+                 <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6 pb-2 border-b border-border">{t.skills.core}</h3>
+                 <div className="flex flex-wrap gap-2">
+                    {["React", "TypeScript", "Next.js", "Tailwind"].map(s => <span key={s} className="px-3 py-1 bg-card border border-border rounded text-sm font-medium">{s}</span>)}
+                 </div>
+              </div>
+              <div>
+                 <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6 pb-2 border-b border-border">{t.skills.comfortable}</h3>
+                 <div className="flex flex-wrap gap-2">
+                    {["Node.js", "Express", "PostgreSQL", "MySQL", "Drizzle", "REST APIs"].map(s => <span key={s} className="px-3 py-1 bg-card border border-border rounded text-sm font-medium">{s}</span>)}
+                 </div>
+              </div>
+              <div>
+                 <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6 pb-2 border-b border-border">{t.skills.exploring}</h3>
+                 <div className="flex flex-wrap gap-2">
+                    {t.skills.exploringList.map(s => <span key={s} className="px-3 py-1 bg-card border border-border rounded text-sm font-medium">{s}</span>)}
+                 </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-40 bg-card relative overflow-hidden stitch-grid text-primary/5">
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-10 leading-tight">¿Tienes una idea en mente?</h2>
           <Link href={`/${locale}/contact`}>
-            <Button size="lg" variant="secondary" className="rounded-full px-10 h-14 text-lg font-bold shadow-xl">
-              {t.contactCta} <Send className="ml-2 h-5 w-5" />
+            <Button size="lg" className="rounded-md px-12 h-14 text-lg font-bold shadow-xl shadow-primary/10 transition-transform hover:scale-105 active:scale-95">
+              {t.contactCta}
             </Button>
           </Link>
         </div>
