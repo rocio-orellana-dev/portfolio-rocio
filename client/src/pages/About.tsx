@@ -1,57 +1,99 @@
 import { useLocale } from "@/components/LocaleProvider";
+import { motion } from "framer-motion";
 
 export default function About() {
   const { locale } = useLocale();
 
   const content = {
     es: {
-      title: "Sobre mí",
-      p1: "Soy Rocío, desarrolladora Full Stack con una pasión profunda por el diseño de experiencias de usuario. Mi enfoque combina la lógica técnica con la sensibilidad visual.",
-      p2: "Con experiencia en tecnologías modernas como React y Node.js, busco crear aplicaciones que no solo funcionen perfectamente, sino que también se sientan bien al usarlas.",
-      exp: "Experiencia"
+      title: "Trayectoria",
+      p1: "Full Stack Developer con enfoque en arquitectura frontend y experiencia en el ciclo completo de desarrollo web. Mi propósito es construir sistemas donde la solidez técnica y la claridad visual coexistan sin fricciones.",
+      p2: "Mi proceso prioriza el orden, la escalabilidad y una profunda atención a la experiencia del usuario final. Creo en el código como una herramienta para resolver problemas reales, evitando la complejidad innecesaria y favoreciendo soluciones elegantes y mantenibles.",
+      p3: "He diseñado e implementado desde sistemas de gestión académica con flujos multirol complejos hasta plataformas de e-commerce automatizadas. Cada proyecto es una oportunidad para profundizar en la intersección entre lógica de negocio y diseño centrado en el humano.",
+      p4: "Esta disciplina se complementa con mi trabajo en diseño de matrices digitales, donde la precisión técnica y el detalle minucioso son fundamentales. Es una práctica que ha refinado mi paciencia y mi respeto por los procesos de construcción rigurosos.",
+      p5: "Actualmente exploro nuevas fronteras en ciberseguridad, infraestructura y redes, buscando integrar estos conocimientos en el desarrollo de aplicaciones más seguras y resilientes.",
     },
     en: {
-      title: "About Me",
-      p1: "I'm Rocío, a Full Stack Developer with a deep passion for user experience design. My approach combines technical logic with visual sensibility.",
-      p2: "With experience in modern technologies like React and Node.js, I aim to build applications that not only work perfectly but also feel great to use.",
-      exp: "Experience"
+      title: "About",
+      p1: "Full Stack Developer focused on frontend architecture and end-to-end web systems. My goal is to build digital products where technical robustness and visual clarity coexist seamlessly.",
+      p2: "My process prioritizes structure, scalability, and deep attention to the end-user experience. I believe in code as a tool to solve real-world problems, avoiding unnecessary complexity in favor of elegant, maintainable solutions.",
+      p3: "I have designed and implemented everything from academic management systems with complex multi-role flows to automated e-commerce platforms. Every project is an opportunity to explore the intersection of business logic and human-centered design.",
+      p4: "This discipline is complemented by my work in digital matrix design, where technical precision and meticulous detail are paramount. This practice has refined my patience and respect for rigorous construction processes.",
+      p5: "I am currently exploring new frontiers in cybersecurity, infrastructure, and networking, seeking to integrate these insights into building more secure and resilient applications.",
     }
   };
 
   const t = content[locale];
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-heading font-bold mb-8">{t.title}</h1>
+    <div className="min-h-screen pt-40 pb-32 px-4 stitch-grid text-foreground/5 dark:text-foreground/2">
+      <div className="max-w-4xl mx-auto relative z-10 text-foreground">
+        <header className="mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-4 mb-4"
+          >
+            <div className="h-px w-12 bg-primary/40" />
+            <span className="text-primary text-xs font-bold uppercase tracking-[0.3em]">Story</span>
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-6xl md:text-9xl font-heading font-bold uppercase tracking-tighter text-primary/10 italic leading-none"
+          >
+            {t.title}
+          </motion.h1>
+        </header>
         
-        <div className="prose dark:prose-invert prose-lg mb-16">
-          <p className="lead text-xl text-muted-foreground">{t.p1}</p>
-          <p>{t.p2}</p>
-        </div>
+        <div className="grid md:grid-cols-[1fr_auto] gap-16 items-start">
+          <div className="space-y-12">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-foreground text-3xl md:text-4xl font-medium tracking-tight leading-tight"
+            >
+              {t.p1}
+            </motion.p>
+            
+            <div className="grid md:grid-cols-2 gap-10 text-muted-foreground leading-relaxed">
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg border-l border-primary/20 pl-6"
+              >
+                {t.p2}
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-lg border-l border-primary/20 pl-6"
+              >
+                {t.p3}
+              </motion.p>
+            </div>
 
-        <h2 className="text-2xl font-heading font-bold mb-8 flex items-center">
-          {t.exp} <div className="ml-4 h-px bg-border flex-grow" />
-        </h2>
-
-        <div className="space-y-12">
-          {/* Timeline Item 1 */}
-          <div className="relative pl-8 border-l-2 border-border">
-            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background" />
-            <h3 className="text-lg font-bold">Freelance Full Stack Developer</h3>
-            <span className="text-sm text-muted-foreground block mb-2">2023 - Present</span>
-            <p className="text-muted-foreground">Developing custom web solutions for diverse clients focusing on React and modern CSS.</p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="bg-card/40 backdrop-blur-sm border border-primary/10 p-12 rounded-[2rem] text-muted-foreground text-lg leading-relaxed shadow-inner"
+            >
+              <p className="mb-6 italic">{t.p4}</p>
+              <div className="flex items-center gap-4 pt-6 border-t border-primary/5">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary">
+                  <span className="text-xs font-black">NEXT</span>
+                </div>
+                <p className="text-primary font-bold tracking-tight">{t.p5}</p>
+              </div>
+            </motion.div>
           </div>
-          
-           {/* Timeline Item 2 */}
-           <div className="relative pl-8 border-l-2 border-border">
-            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-muted border-4 border-background" />
-            <h3 className="text-lg font-bold">Frontend Intern</h3>
-            <span className="text-sm text-muted-foreground block mb-2">2022 - 2023</span>
-            <p className="text-muted-foreground">Collaborated on UI component libraries and responsive layouts.</p>
-          </div>
-        </div>
 
+          <div className="hidden md:block sticky top-40 w-px h-64 bg-gradient-to-b from-primary/40 to-transparent" />
+        </div>
       </div>
     </div>
   );

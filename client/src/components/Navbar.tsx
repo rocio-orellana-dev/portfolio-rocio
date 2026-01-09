@@ -13,8 +13,9 @@ export function Navbar() {
   const navItems = [
     { label: locale === "es" ? "Proyectos" : "Projects", href: `/${locale}/projects` },
     { label: locale === "es" ? "Sobre mí" : "About", href: `/${locale}/about` },
-    { label: locale === "es" ? "Matricería" : "Embroidery", href: `/${locale}/embroidery` },
-    { label: locale === "es" ? "Notas" : "Notes", href: `/${locale}/notes` }, // Optional based on prompt
+    { label: locale === "es" ? "Matricería" : "Embroidery Lab", href: `/${locale}/embroidery` },
+    { label: locale === "es" ? "Notas" : "Notes", href: `/${locale}/notes` },
+    { label: locale === "es" ? "CV" : "Resume", href: `/${locale}/resume` },
     { label: locale === "es" ? "Contacto" : "Contact", href: `/${locale}/contact` },
   ];
 
@@ -41,7 +42,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link 
                 key={item.href} 
@@ -64,18 +65,18 @@ export function Navbar() {
             
             <button 
               onClick={toggleLocale}
-              className="text-xs font-mono font-bold tracking-wider hover:text-primary transition-colors"
+              className="text-xs font-mono font-bold tracking-wider hover:text-primary transition-colors uppercase"
             >
-              <span className={locale === "es" ? "text-primary" : "text-muted-foreground"}>ES</span>
+              <span className={locale === "es" ? "text-primary underline underline-offset-4" : "text-muted-foreground"}>ES</span>
               <span className="text-muted-foreground mx-1">/</span>
-              <span className={locale === "en" ? "text-primary" : "text-muted-foreground"}>EN</span>
+              <span className={locale === "en" ? "text-primary underline underline-offset-4" : "text-muted-foreground"}>EN</span>
             </button>
 
             <ThemeToggle />
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-4">
             <ThemeToggle />
             <button onClick={() => setIsOpen(!isOpen)} className="text-foreground p-2">
               {isOpen ? <X /> : <Menu />}
@@ -91,7 +92,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            className="lg:hidden bg-background border-b border-border"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navItems.map((item) => (
@@ -107,12 +108,12 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 border-t border-border mt-4 px-3 flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Language</span>
+                <span className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Language</span>
                 <button 
                   onClick={toggleLocale}
-                  className="font-mono text-sm font-bold bg-muted px-3 py-1 rounded"
+                  className="font-mono text-sm font-bold bg-muted px-4 py-2 rounded-md hover:bg-primary/10 hover:text-primary transition-colors"
                 >
-                  {locale.toUpperCase()}
+                  {locale === "es" ? "Switch to English" : "Cambiar a Español"}
                 </button>
               </div>
             </div>
