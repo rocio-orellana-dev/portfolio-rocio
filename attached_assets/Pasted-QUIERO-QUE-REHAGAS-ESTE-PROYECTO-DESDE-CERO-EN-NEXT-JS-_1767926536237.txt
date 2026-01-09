@@ -1,0 +1,216 @@
+QUIERO QUE REHAGAS ESTE PROYECTO DESDE CERO EN NEXT.JS (NO VITE).
+Actualmente el repo parece Vite/React (main.tsx, index.html). Debes MIGRAR/REEMPLAZAR a Next.js 14+ con App Router, TypeScript y Tailwind. El resultado debe ser production-ready y deployable en Vercel.
+
+OBJETIVO:
+Portfolio premium, original, sobrio y confiable para Rocío Belén Orellana Díaz (Full Stack Developer). Debe verse MUY por encima de templates genéricos y NO parecer hecho por IA.
+
+DATOS:
+Nombre: Rocío Belén Orellana Díaz
+Email: rocio.orellana.ing@gmail.com
+Idioma: BILINGÜE ES/EN con detección automática del navegador
+Tema: Light + Dark opcional (dark azul noche premium)
+
+STACK OBLIGATORIO:
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- next-intl (i18n)
+- next-themes (light/dark toggle)
+- MDX para case studies (con componentes)
+- Deploy listo para Vercel (sin errores build)
+
+RUTAS OBLIGATORIAS (con locale):
+/ -> redirige automáticamente a /es o /en según Accept-Language
+/[locale]
+/[locale]/projects
+/[locale]/projects/[slug]
+/[locale]/about
+/[locale]/embroidery-lab
+/[locale]/notes (placeholder inicial)
+(/[locale]/resume placeholder con botón Download PDF)
+/[locale]/contact
+
+I18N:
+- Implementar middleware que detecte idioma del navegador y redirija / a /es o /en.
+- Toggle de idioma en NAVBAR debe ser TEXTO: “ES / EN” (sin banderas) y debe mantener la misma ruta.
+- Traducciones en JSON (messages/es.json y messages/en.json).
+
+THEME (DISEÑO):
+Implementar tokens por CSS variables + Tailwind (usar EXACTO):
+
+LIGHT
+bg: #FAFAF9
+text: #1F2937
+primary: #0F766E (teal)
+accent: #F59E0B (amber, uso mínimo)
+border: #E5E7EB
+
+DARK (azul noche premium)
+bg: #0B1220
+card: #0F1A2E
+text: #E5E7EB
+muted: #94A3B8
+primary: #2DD4BF
+accent: #FBBF24
+border: #1F2A44
+
+TIPOGRAFÍAS:
+- Inter para texto/UI
+- Sora para headings
+Usar next/font/google.
+
+IDENTIDAD VISUAL:
+“Profesional con calidez + tech moderno” con sensación: “confiable y dedicada”.
+Agregar textura MUY sutil tipo “stitch grid” (puntos/cuadrícula leve) solo en el HERO y separadores (2–4% opacidad). Nada exagerado.
+
+NAVBAR:
+Sticky, minimal.
+Izquierda: “Rocío Belén Orellana Díaz”
+Centro: Projects, About, Matricería (Embroidery Lab), Notes, CV, Contact
+Derecha: “ES / EN” + toggle tema
+Mobile: hamburguesa + toggles accesibles.
+
+HERO (OBLIGATORIO, 2 columnas):
+- Izquierda: availability + H1 + subtitle + growth + CTAs
+- Derecha: card con FOTO (usar placeholder: /public/images/profile.jpg) + “Quick facts”
+Quick facts: Full Stack · UX & Systems · Open to internship/junior
+Badges: React, TypeScript, Node, MySQL
+H1 debe tener gradiente sutil solo en una palabra (no exagerar tamaños).
+
+COPY EXACTO (usar en ES):
+availability: “Disponible para práctica profesional y oportunidades junior”
+title: “Full Stack Developer enfocada en UX, sistemas y detalle”
+subtitle: “Diseño y desarrollo soluciones web completas — desde la interfaz hasta la base de datos — combinando lógica, diseño y una ejecución cuidadosa para crear productos funcionales, claros y mantenibles.”
+growth: “En aprendizaje continuo: ciberseguridad, soporte TI, redes e infraestructura.”
+CTAs: “Ver proyectos” y “Descargar CV”
+
+EN: versión natural profesional equivalente.
+
+HOME SECTIONS (orden):
+1) Hero
+2) Qué hago (3 cards premium con icono lineal y microcopy):
+   - Desarrollo Frontend (React/TS/Tailwind, accesibilidad, performance)
+   - Sistemas Backend (APIs REST + DB)
+   - Soluciones Full Stack (end-to-end)
+3) Proyectos destacados (3 cards)
+4) Cómo trabajo (4 pasos): Descubrir, Diseñar, Construir, Desplegar
+5) Skills con criterio (3 columnas): Core / Comfortable / Exploring
+   Exploring debe ser: Cybersecurity, IT Support, Networking, Infrastructure (NO Rust/WebAssembly/Three.js)
+6) CTA final de contacto
+
+PROYECTOS (DATA + MDX):
+Crear src/data/projects.ts con 4 proyectos y 3 destacados:
+
+1) Flagship
+ES slug: sistema-reportes-escolares
+EN slug: school-reporting-system
+Title ES: “Sistema de Gestión de Reportes y Convivencia Escolar”
+Title EN: “School Reporting & Student Support Management System”
+Summary ES: “Plataforma multirol con derivaciones, seguimiento y cierre de casos, con dashboards por rol.”
+Summary EN: “Multi-role platform with routing, case tracking and closure, with role-based dashboards.”
+Tags: React, TypeScript, Tailwind, REST APIs, MySQL
+
+2) E-commerce
+ES slug: tienda-matrices
+EN slug: embroidery-matrix-store
+Title ES: “Tienda Digital de Matrices de Bordado”
+Title EN: “Digital Embroidery Matrix Store”
+Summary ES: “E-commerce de productos digitales con pago y descarga inmediata post-compra.”
+Summary EN: “Digital products e-commerce with payments and instant post-purchase downloads.”
+Tags: React, Tailwind, Payments, Security, Digital goods
+
+3) UX
+ES slug: landing-jardin
+EN slug: early-childhood-center-landing
+Title ES: “Landing Institucional — Jardín Infantil”
+Title EN: “Early Childhood Center — Institutional Landing Page”
+Summary ES: “Landing orientada a confianza y contacto para consultas de matrícula.”
+Summary EN: “Trust- and contact-focused landing page for enrollment inquiries.”
+Tags: HTML, CSS, JavaScript, Responsive, Tailwind
+
+4) Base (no destacado)
+ES slug: sistema-crud-colegio
+EN slug: school-crud-system
+Title ES: “Sistema de Gestión Escolar (Base) — CRUD de Alumnos y Notas”
+Title EN: “School Management (Base) — Students & Grades CRUD”
+Summary ES: “Proyecto base para consolidar CRUD, formularios y persistencia.”
+Summary EN: “Foundation project to consolidate CRUD, forms, and persistence.”
+Tags: CRUD, MySQL, REST APIs, Forms
+
+CASE STUDIES EN MDX:
+Crear MDX en:
+src/content/projects/es/*.mdx
+src/content/projects/en/*.mdx
+Cada MDX debe tener frontmatter con:
+title, role, stack[], highlights{problem,solution,outcome,metrics[]}
+
+IMPORTANTÍSIMO:
+- NO usar lorem ipsum.
+- NO inventar métricas numéricas (“+40%”). Solo métricas cualitativas reales.
+
+HIGHLIGHTS EXACTOS (usar tal cual):
+ES sistema-reportes-escolares
+problem: “Reportes escolares sin trazabilidad ni seguimiento consistente entre roles.”
+solution: “Flujo multirol con revisión, derivación, seguimiento y cierre, con dashboards por rol.”
+outcome: “Proceso centralizado y estados visibles para coordinar acciones y dar seguimiento ordenado.”
+metrics:
+- “Flujo completo: reporte → revisión → derivación → seguimiento → cierre”
+- “Dashboards diferenciados por rol (apoderado/docente/dirección)”
+- “Historial de seguimiento para trazabilidad”
+
+EN school-reporting-system
+problem: “School reports handled informally, leading to poor traceability and inconsistent follow-up.”
+solution: “A multi-role workflow (review, routing, tracking, closure) with role-based dashboards.”
+outcome: “Centralized process with clear case status visibility and structured follow-up.”
+metrics:
+- “End-to-end flow: create → review → route → follow up → close”
+- “Role-based dashboards (parents/teachers/admin)”
+- “Follow-up history for traceability”
+
+ES tienda-matrices
+problem: “Venta de productos digitales con formatos incompatibles y necesidad de automatizar pago y entrega.”
+solution: “E-commerce con selección de formato (JEF/PES/DST), pago online y validación para descarga segura.”
+outcome: “Compra simple y entrega inmediata post-pago, alineada a reglas reales del rubro.”
+metrics:
+- “Selección obligatoria de formato antes de comprar”
+- “Descarga inmediata post-pago”
+- “Precio definido por cantidad de puntadas (stitch count)”
+
+EN embroidery-matrix-store
+problem: “Digital product sales with incompatible formats and the need to automate payment and delivery.”
+solution: “E-commerce flow with format selection (JEF/PES/DST), online payment, and secure download validation.”
+outcome: “Fast checkout and instant post-payment delivery aligned with real industry rules.”
+metrics:
+- “Mandatory format selection before checkout”
+- “Instant download after payment”
+- “Pricing based on stitch count”
+
+Landing ES/EN: escribir highlights coherentes con confianza + contacto (sin inventar números).
+
+MDX COMPONENTS:
+Implementar CaseStudyLayout premium con:
+- Back link
+- Role
+- stack badges
+- Block tipográfico Problem/Solution/Outcome + Metrics (sin iconos/emojis)
+Implementar ImageGrid:
+- 1 columna en mobile, 2 columnas en md
+- Cards con borde + caption
+En el MDX del sistema escolar incluir sección Capturas con ImageGrid usando rutas:
+public/images/projects/school-reporting/reports-dashboard.png
+.../case-detail.png
+.../create-report.png
+.../routing-followup.png
+(Deja esos archivos como placeholders vacíos o imágenes demo si no existen).
+
+FOOTER:
+“© 2026 Rocío Belén Orellana Díaz”
+Links: GitHub, LinkedIn, Email (mailto: rocio.orellana.ing@gmail.com)
+Eliminar cualquier texto genérico tipo “Built with React”.
+
+ENTREGABLES:
+- Proyecto corriendo con npm install && npm run dev
+- Build sin errores
+- Diseño premium consistente
+- Nada de contenido falso (lorem / métricas inventadas)
+- Mantener performance (no usar librerías UI pesadas)
