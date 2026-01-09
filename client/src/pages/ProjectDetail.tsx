@@ -162,5 +162,4 @@ export default function ProjectDetail() {
       </div>
     </article>
   );
-  );
 }
