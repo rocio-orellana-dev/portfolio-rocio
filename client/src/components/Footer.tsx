@@ -50,9 +50,11 @@ export function Footer() {
         </div>
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Rocío Belén Orellana Díaz.</p>
+          <p>&copy; 2026 Rocío Belén Orellana Díaz.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <span>{locale === "es" ? "Hecho con ❤️ y código" : "Made with ❤️ and code"}</span>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+            <a href="mailto:rocio.orellana.ing@gmail.com" className="hover:text-primary transition-colors">Email</a>
           </div>
         </div>
       </div>
