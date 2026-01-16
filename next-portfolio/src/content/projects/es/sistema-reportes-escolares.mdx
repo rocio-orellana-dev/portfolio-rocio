@@ -1,0 +1,84 @@
+export const frontmatter = {
+  title: "Sistema de Gestión de Reportes y Convivencia Escolar",
+  role: "Full Stack Developer (UX + Dashboards)",
+  stack: ["React", "TypeScript", "Tailwind", "Node.js", "Django", "MySQL"],
+  highlights: {
+    problem: "Reportes escolares sin trazabilidad ni seguimiento consistente entre roles.",
+    solution: "Flujo multirol con revisión, derivación, seguimiento y cierre, con dashboards por rol.",
+    outcome: "Proceso centralizado y estados visibles para coordinar acciones y dar seguimiento ordenado.",
+    metrics: [
+      "Flujo completo: reporte → revisión → derivación → seguimiento → cierre",
+      "Dashboards diferenciados por rol (apoderado/docente/dirección)",
+      "Historial de seguimiento para trazabilidad"
+    ]
+  }
+};
+
+## Resumen
+Plataforma web Full Stack diseñada para gestionar reportes escolares con trazabilidad. Permite **registrar**, **revisar**, **derivar**, **dar seguimiento** y **cerrar** casos, con paneles diferenciados por rol.
+
+## Contexto
+Los reportes escolares suelen gestionarse de forma informal (mensajes, papeles o conversaciones), lo que genera pérdida de información, seguimiento inconsistente y poca visibilidad del estado de cada caso.
+
+## Usuarios y roles
+- **Apoderados:** registran reportes y consultan el estado del caso.
+- **Docentes:** revisan casos asociados y agregan observaciones.
+- **Dirección / Gestión:** revisa, deriva, coordina seguimiento y cierra casos.
+
+## Flujo principal
+1. Reporte creado  
+2. Revisión inicial  
+3. Derivación  
+4. Seguimiento  
+5. Cierre  
+
+## Mi enfoque (lo que más trabajé)
+- Diseño UX de un flujo largo sin fricción.
+- Dashboards por rol con estados claros y navegación simple.
+- Estructura de información orientada a usuarios no técnicos.
+
+## Solución (features clave)
+- Registro estructurado de reportes.
+- Vistas por rol y permisos por tipo de usuario.
+- Seguimiento con historial de cambios/observaciones.
+- Cierre del caso con registro final.
+
+## Capturas
+<ImageGrid
+  columns={2}
+  images={[
+    {
+      src: "/images/projects/school-reporting/reports-dashboard.png",
+      alt: "Dashboard de Dirección con estados y resumen",
+      caption: "Dashboard Dirección — visión general y estados"
+    },
+    {
+      src: "/images/projects/school-reporting/case-detail.png",
+      alt: "Detalle del caso con seguimiento e historial",
+      caption: "Detalle del caso — seguimiento y trazabilidad"
+    },
+    {
+      src: "/images/projects/school-reporting/create-report.png",
+      alt: "Formulario de creación de reporte",
+      caption: "Crear reporte — formulario claro y guiado"
+    },
+    {
+      src: "/images/projects/school-reporting/routing-followup.png",
+      alt: "Derivación y actualización de estado",
+      caption: "Derivación — cambio de estado y asignación"
+    }
+  ]}
+/>
+
+## Decisiones técnicas (alto nivel)
+- UI clara y consistente: estados visibles, acciones simples.
+- APIs REST para separar UI y lógica.
+- Modelo relacional para reportes, usuarios, roles y estados.
+
+## Aprendizajes y próximos pasos
+- La claridad del flujo y los estados es crítica en procesos largos.
+- Próximas mejoras:
+  - notificaciones automáticas,
+  - métricas e indicadores,
+  - permisos más granulares,
+  - auditoría más detallada.

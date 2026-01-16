@@ -1,0 +1,41 @@
+export const frontmatter = {
+  title: "School Reporting & Student Support Management System",
+  role: "Full Stack Developer (UX & Dashboards)",
+  stack: ["React", "TypeScript", "Tailwind", "Node.js", "Django", "MySQL"],
+  highlights: {
+    problem: "School reports handled informally, leading to poor traceability and inconsistent follow-up.",
+    solution: "A multi-role workflow (review, routing, tracking, closure) with role-based dashboards.",
+    outcome: "Centralized process with clear case status visibility and structured follow-up.",
+    metrics: [
+      "End-to-end flow: create → review → route → follow up → close",
+      "Role-based dashboards (parents/teachers/admin)",
+      "Follow-up history for traceability"
+    ]
+  }
+};
+
+## Overview
+A Full Stack platform designed to manage school reports with traceability: users can create, review, route, track, and close cases through a structured workflow.
+
+## Roles
+- Parents/Guardians
+- Teachers
+- School Management/Admin
+
+## Workflow
+Create → Review → Route → Follow up → Close
+
+## Screenshots
+<ImageGrid
+  columns={2}
+  images={[
+    { src: "/images/projects/school-reporting/reports-dashboard.png", alt: "Admin dashboard overview", caption: "Admin dashboard — overview & statuses" },
+    { src: "/images/projects/school-reporting/case-detail.png", alt: "Case detail with history", caption: "Case detail — follow-up & traceability" },
+    { src: "/images/projects/school-reporting/create-report.png", alt: "Create report form", caption: "Create report — guided form" },
+    { src: "/images/projects/school-reporting/routing-followup.png", alt: "Routing and status update", caption: "Routing — status changes & assignment" }
+  ]}
+/>
+
+## Learnings & Next Steps
+- UX clarity is critical in long-running workflows.
+- Add notifications, deeper metrics, and granular permissions in future iterations.

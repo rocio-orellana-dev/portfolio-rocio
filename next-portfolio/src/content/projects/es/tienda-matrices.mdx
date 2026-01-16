@@ -1,0 +1,42 @@
+export const frontmatter = {
+  title: "Tienda Digital de Matrices de Bordado",
+  role: "Full Stack Developer",
+  stack: ["React", "Tailwind", "Payments", "Security", "Database"],
+  highlights: {
+    problem: "Venta de productos digitales con formatos incompatibles y necesidad de automatizar pago y entrega.",
+    solution: "E-commerce con selección de formato (JEF/PES/DST), pago online y validación para descarga segura.",
+    outcome: "Compra simple y entrega inmediata post-pago, alineada a reglas reales del rubro.",
+    metrics: [
+      "Selección obligatoria de formato antes de comprar",
+      "Descarga inmediata post-pago",
+      "Precio definido por cantidad de puntadas (stitch count)"
+    ]
+  }
+};
+
+## Resumen
+Tienda online para productos digitales especializados (matrices de bordado), con selección de formato, pago online y descarga inmediata tras la compra.
+
+## Contexto y desafío
+Este tipo de producto no se vende como un e-commerce típico:
+- El precio depende de **puntadas**.
+- Existen formatos incompatibles (JEF, PES, DST).
+- Al ser digital, el control de acceso a la descarga es clave.
+
+## Objetivo
+- Definir precios realistas según puntadas (validado con costurera).
+- Elegir formato antes de comprar.
+- Integrar pago y habilitar descarga post-pago.
+
+## Flujo del usuario
+Catálogo → Selección de diseño → Formato → Pago → Descarga
+
+## Aprendizajes
+- Primera integración real de APIs de pago.
+- Diseño de flujo de entrega digital.
+- Importancia del resguardo básico de datos y control de accesos.
+
+## Próximos pasos
+- Historial de compras por usuario.
+- Notificaciones automáticas post-pago.
+- Panel admin para productos y precios.

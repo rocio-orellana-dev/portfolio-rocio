@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "embroidery": "Embroidery Lab",
+    "notes": "Notes",
+    "resume": "Resume",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "availability": "Open to internships and junior opportunities",
+    "title": "Full Stack Developer focused on UX, systems, and detail",
+    "subtitle": "I design and build complete web solutions — from UI to database — combining logic, design, and careful execution to create functional, clear, and maintainable products.",
+    "growth": "Continuously learning: cybersecurity, IT support, networking, and infrastructure.",
+    "ctaProjects": "View projects",
+    "ctaResume": "Download resume",
+    "factsTitle": "Focus",
+    "facts1": "Full Stack",
+    "facts2": "UX & Systems",
+    "facts3": "Intern / Junior"
+  },
+  "projects": {
+    "featured": "Featured projects",
+    "viewAll": "View all",
+    "viewCase": "View case"
+  },
+  "footer": {
+    "email": "Email",
+    "contact": "Contact"
+  },
+  "case": { 
+    "back": "Back to projects",
+    "role": "Role" 
+  },
+  "caseHighlights": {
+    "problem": "PROBLEM",
+    "solution": "SOLUTION"
+  },
+  "projectsPage": {
+    "title": "Projects",
+    "subtitle": "Selected case studies: systems, e-commerce, and UX built for real goals.",
+    "viewCase": "View case" 
+  }
+
+}

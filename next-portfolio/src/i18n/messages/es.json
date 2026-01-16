@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "embroidery": "Matricería",
+    "notes": "Notas",
+    "resume": "CV",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "hero": {
+    "availability": "Disponible para práctica profesional y oportunidades junior",
+    "title": "Full Stack Developer enfocada en UX, sistemas y detalle",
+    "subtitle": "Diseño y desarrollo soluciones web completas — desde la interfaz hasta la base de datos — combinando lógica, diseño y una ejecución cuidadosa para crear productos funcionales, claros y mantenibles.",
+    "growth": "En aprendizaje continuo: ciberseguridad, soporte TI, redes e infraestructura.",
+    "ctaProjects": "Ver proyectos",
+    "ctaResume": "Descargar CV",
+    "factsTitle": "Enfoque",
+    "facts1": "Full Stack",
+    "facts2": "UX & Systems",
+    "facts3": "Práctica / Junior"
+  },
+  "projects": {
+    "featured": "Proyectos destacados",
+    "viewAll": "Ver todos",
+    "viewCase": "Ver caso"
+  },
+  "footer": {
+    "email": "Email",
+    "contact": "Contacto"
+  },
+
+  "case": { 
+    "back": "Volver a proyectos",
+    "role": "Rol" 
+  },
+  "caseHighlights": {
+    "problem": "PROBLEMA",
+    "solution": "SOLUCION"
+  },
+  "projectsPage": {
+    "title": "Proyectos",
+    "subtitle": "Casos seleccionados: sistemas, e-commerce y UX orientado a objetivos reales.",
+    "viewCase": "Ver caso" 
+  }
+}
